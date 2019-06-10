@@ -9,10 +9,12 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 ## Users
 
 - Gustavo
+
 User: gustavo
 Pass: icefirerocks
 
 - Admin
+
 User: admin
 Pass: icefirerocks
 
