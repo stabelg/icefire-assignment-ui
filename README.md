@@ -8,10 +8,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Users
 
--Gustavo
+- Gustavo
 User: gustavo
 Pass: icefirerocks
--Admin
+
+- Admin
 User: admin
 Pass: icefirerocks
 
@@ -24,3 +25,7 @@ A new row will be add to the list and the input will be cleared.
 - Decrypt
 Select a row from the table or click on "Pick up" the input now will be filled with the 
 encrypted data you can press Decrypt or press Encrypt to save a new one.
+
+## Contact
+
+Gustavo Stabelini (gustavostabelini@gmail.com)
