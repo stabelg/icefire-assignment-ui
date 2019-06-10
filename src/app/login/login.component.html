@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row justify-content-md-center align-items-center">
+        <div class="col-md-auto">
+            <h1>Login</h1>
+            <div class="alert alert-danger" role="alert" [hidden]="!error">
+                Username or password are wrong!
+            </div>
+            <label>Username:</label>
+            <input #username type="text" class="form-control"/>
+            <p>
+            <label>Password:</label>
+            <input #password type="password" class="form-control" (keyup.enter)="login(username.value, password.value)"/>
+            <p>
+            <button (click)="login(username.value, password.value)" 
+                type="button" class="btn btn-primary" type="submit">Login</button>
+        </div>
+    </div>
+</div>

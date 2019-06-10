@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-link float-right" (click)="logout()">Logout</button>
+        <label class="float-right align-self-center" style="padding-top: 7px;">Hello {{username}}</label>
+      </div>
+    </div>
+</div>
+<div class="container" [hidden]="!error">
+  <div class="alert alert-danger" role="alert">
+    {{error}}
+  </div>
+</div>
+<div class="container">
+  <div class="form-group">
+      <label for="informationId">Information</label>
+      <input type="text" class="form-control" id="informationId" [hidden]="information.informationSecured" [(ngModel)]="information.information" 
+        placeholder="Information to be encrypted" (keyup.enter)="encrypt()">
+      <input type="text" class="form-control" id="informationId" disabled [hidden]="!information.informationSecured" [(ngModel)]="information.informationSecured" 
+        placeholder="Information encrypted">
+  </div>
+  <div class="form-group">
+      <button type="button" class="btn btn-primary" [disabled]="!information.information && !information.informationSecured" (click)="encrypt()">Encrypt</button>
+      <button type="button" class="btn btn-secondary" [disabled]="!information.informationSecured" style="margin-left: 15px;" (click)="decrypt()">Decrypt</button>
+  </div>
+</div>
+<div class="container">
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Information Secured</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let current of informationList; let i = index" (click)="pickUp(current)">
+        <td>{{i+1}}</td>
+        <td title="{{current.informationSecured}}" style="text-overflow: ellipsis;overflow: hidden;max-width: 500px;white-space: nowrap;">{{current.informationSecured}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="pickUp(current)">Pick Up</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
